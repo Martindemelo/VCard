@@ -2,9 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Martin de Melo – DJ</title>
-  <meta name="theme-color" content="#000000" />
   <style>
     @font-face {
       font-family: 'Hemi Head';
@@ -13,36 +12,22 @@
       font-style: normal;
     }
 
-    :root {
-      --bg: url('fond-floute.jpg');
-      --overlay: rgba(0, 0, 0, 0.6);
-      --text-color: #fff;
-      --contact-color: #ccc;
-    }
-
-    body.light {
-      --bg: #f2f2f2;
-      --overlay: rgba(255, 255, 255, 0.9);
-      --text-color: #222;
-      --contact-color: #555;
-    }
-
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: var(--bg) no-repeat center center fixed;
+      background: url('fond-floute.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: var(--text-color);
+      backdrop-filter: blur(6px);
+      color: #fff;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem 1rem;
-      transition: background 0.3s ease, color 0.3s ease;
     }
 
     .container {
-      background-color: var(--overlay);
+      background-color: rgba(0, 0, 0, 0.6);
       padding: 2rem;
       border-radius: 1rem;
       max-width: 420px;
@@ -54,6 +39,7 @@
       font-family: 'Hemi Head', sans-serif;
       font-size: 2rem;
       margin-bottom: 0.5rem;
+      color: #f8f8ff;
     }
 
     .photo {
@@ -66,7 +52,7 @@
       box-shadow: 0 0 10px rgba(255, 0, 255, 0.4);
     }
 
-    .link {
+    .link, .bonus-button {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -79,91 +65,103 @@
       border-radius: 999px;
       font-weight: bold;
       transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+      max-width: 420px;
+      cursor: pointer;
     }
 
-    .link:hover {
+    .link:hover, .bonus-button:hover {
       transform: scale(1.05);
       box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
     }
 
-    .btn-call {
-      background: linear-gradient(to right, #00b894, #019875);
+    i {
+      font-size: 1.2rem;
+    }
+
+    .call-button {
+      background: linear-gradient(to right, #28a745, #218838);
+      color: white;
+      max-width: 160px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
       padding: 0.75rem;
-      margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
       border-radius: 999px;
       font-weight: bold;
-      color: white;
+      transition: transform 0.2s, box-shadow 0.2s;
       text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-call:hover {
-      background: #00a27a;
-    }
-
-    .contact {
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      color: var(--contact-color);
-    }
-
-    .contact a {
-      color: var(--contact-color);
-      text-decoration: none;
-    }
-
-    .toggle-theme {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background: #222;
-      color: #fff;
-      border: none;
-      padding: 0.4em 0.6em;
-      border-radius: 5px;
       cursor: pointer;
-      font-size: 0.8rem;
-      z-index: 1000;
     }
 
-    body.light .toggle-theme {
-      background: #ccc;
-      color: #222;
+    .call-button:hover {
+      background: linear-gradient(to right, #218838, #1e7e34);
+      box-shadow: 0 0 15px rgba(40, 167, 69, 0.7);
+      transform: scale(1.05);
     }
+.bonus-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(to right, #ff007f, #ff6f3c);
+  box-shadow: 0 0 15px rgba(255, 111, 60, 0.6);
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 999px;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  max-width: 420px;
+  cursor: pointer;
+}
+
+.bonus-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(159, 79, 255, 0.6);
+}
+
   </style>
   <script src="https://kit.fontawesome.com/3e2c91b3db.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <button class="toggle-theme" onclick="toggleTheme()">Mode Jour/Nuit</button>
   <div class="container">
     <div class="photo"></div>
     <h1>Martin de Melo</h1>
-    <p style="margin-top: 0.2em; font-size: 1em;">DJ since 1983</p>
+    <p style="margin-top: 0.2em; font-size: 1em; color: #ccc;">DJ since 1983</p>
 
-    <a class="link" href="https://www.instagram.com/martindemelo.dj" target="_blank">
+    <a class="link" href="https://www.instagram.com/martindemelo.dj" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-instagram"></i> Instagram
     </a>
-    <a class="link" href="https://www.facebook.com/profile.php?id=61563048720991" target="_blank">
+    <a class="link" href="https://www.facebook.com/profile.php?id=61563048720991" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-facebook"></i> Facebook
     </a>
-    <a class="link" href="https://www.youtube.com/martindemelodj" target="_blank">
+    <a class="link" href="https://www.youtube.com/martindemelodj" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-youtube"></i> YouTube
     </a>
-    <a class="link" href="https://www.mixcloud.com/martindemelo/" target="_blank">
+    <a class="link" href="https://www.mixcloud.com/martindemelo/" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-mixcloud"></i> Mixcloud
     </a>
-    <a class="link" href="https://wa.me/33769197530" target="_blank">
+    <a class="link" href="https://wa.me/33769197530" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-whatsapp"></i> WhatsApp
     </a>
     <a class="link" href="mailto:martindemelo.dj@gmail.com">
       <i class="fas fa-envelope"></i> Email
     </a>
-    <a class="btn-call" href="tel:+33769197530">
-      📞 Appeler
-    </a>
-
-    <div class="contact">
-       </div>
+    
+    <!-- Bouton Bonus pour comptes supplémentaires -->
+    <a class="bonus-button" href="bonus.html" title="Comptes supplémentaires">
+      <i class="fas fa-ellipsis-h"></i> + de liens
+<!-- Bouton Appeler -->
+    <a class="call-button" href="tel:+33769197530">
+      <i class="fas fa-phone"></i> 📞 Appeler
+  </a>
   </div>
 
   <script>
