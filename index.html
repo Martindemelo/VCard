@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Martin de Melo – DJ</title>
+  <meta name="theme-color" content="#000000" />
   <style>
     @font-face {
       font-family: 'Hemi Head';
@@ -13,22 +13,36 @@
       font-style: normal;
     }
 
+    :root {
+      --bg: url('fond-floute.jpg');
+      --overlay: rgba(0, 0, 0, 0.6);
+      --text-color: #fff;
+      --contact-color: #ccc;
+    }
+
+    body.light {
+      --bg: #f2f2f2;
+      --overlay: rgba(255, 255, 255, 0.9);
+      --text-color: #222;
+      --contact-color: #555;
+    }
+
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: url('fond-floute.jpg') no-repeat center center fixed;
+      background: var(--bg) no-repeat center center fixed;
       background-size: cover;
-      backdrop-filter: blur(6px);
-      color: #fff;
+      color: var(--text-color);
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem 1rem;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     .container {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: var(--overlay);
       padding: 2rem;
       border-radius: 1rem;
       max-width: 420px;
@@ -40,7 +54,6 @@
       font-family: 'Hemi Head', sans-serif;
       font-size: 2rem;
       margin-bottom: 0.5rem;
-      color: #f8f8ff;
     }
 
     .photo {
@@ -73,28 +86,59 @@
       box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
     }
 
-    i {
-      font-size: 1.2rem;
+    .btn-call {
+      background: linear-gradient(to right, #00b894, #019875);
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 999px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-call:hover {
+      background: #00a27a;
     }
 
     .contact {
       margin-top: 1rem;
       font-size: 0.9rem;
-      color: #ccc;
+      color: var(--contact-color);
     }
 
     .contact a {
-      color: #ddd;
+      color: var(--contact-color);
       text-decoration: none;
+    }
+
+    .toggle-theme {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #222;
+      color: #fff;
+      border: none;
+      padding: 0.4em 0.6em;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      z-index: 1000;
+    }
+
+    body.light .toggle-theme {
+      background: #ccc;
+      color: #222;
     }
   </style>
   <script src="https://kit.fontawesome.com/3e2c91b3db.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <button class="toggle-theme" onclick="toggleTheme()">Mode Jour/Nuit</button>
   <div class="container">
     <div class="photo"></div>
     <h1>Martin de Melo</h1>
-    <p style="margin-top: 0.2em; font-size: 1em; color: #ccc;">DJ since 1983</p>
+    <p style="margin-top: 0.2em; font-size: 1em;">DJ since 1983</p>
 
     <a class="link" href="https://www.instagram.com/martindemelo.dj" target="_blank">
       <i class="fab fa-instagram"></i> Instagram
@@ -114,12 +158,26 @@
     <a class="link" href="mailto:martindemelo.dj@gmail.com">
       <i class="fas fa-envelope"></i> Email
     </a>
+    <a class="btn-call" href="tel:+33769197530">
+      📞 Appeler
+    </a>
 
     <div class="contact">
-      <p>Tél : <a href="tel:+33769197530">07 69 19 75 30</a></p>
-      <p>Email : <a href="mailto:martindemelo.dj@gmail.com">martindemelo.dj@gmail.com</a></p>
-    </div>
+       </div>
   </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.body.classList.add('light');
+      }
+    });
+  </script>
 </body>
 </html>
-
