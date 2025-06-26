@@ -18,10 +18,12 @@
     .container {
       background-color: rgba(0,0,0,0.6);
       max-width: 420px;
+      width: 90vw;
       margin: auto;
       border-radius: 1rem;
       padding: 2rem;
       box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+      box-sizing: border-box;
     }
     h1 {
       font-family: 'Hemi Head', sans-serif;
@@ -42,6 +44,12 @@
       border-radius: 999px;
       font-weight: bold;
       transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      font-size: 1rem;
+      cursor: pointer;
+      user-select: none;
     }
     a.link:hover {
       transform: scale(1.05);
@@ -65,19 +73,19 @@
   <div class="container">
     <h1>Liens Bonus</h1>
 
-    <a class="link" href="https://www.mixcloud.com/MartindeMeloOnTheRadio/" target="_blank">
+    <a class="link" href="https://www.mixcloud.com/MartindeMeloOnTheRadio/" target="_blank" rel="noopener noreferrer">
       <i class="fas fa-podcast"></i> Mixcloud Radio
     </a>
 
-    <a class="link" href="https://www.mixcloud.com/Martin2Melo/" target="_blank">
+    <a class="link" href="https://www.mixcloud.com/Martin2Melo/" target="_blank" rel="noopener noreferrer">
       <i class="fas fa-music"></i> Mixcloud Live
     </a>
 
-    <a class="link" href="https://music.amazon.fr/podcasts/1dc928a6-1aed-40fd-87cc-8595ad61c8a7/martin-de-melo" target="_blank">
+    <a class="link" href="https://music.amazon.fr/podcasts/1dc928a6-1aed-40fd-87cc-8595ad61c8a7/martin-de-melo" target="_blank" rel="noopener noreferrer">
       <i class="fas fa-headphones"></i> Podcast Amazon
     </a>
 
-    <a class="link" href="https://www.instagram.com/newwavegeneration" target="_blank">
+    <a class="link" href="https://www.instagram.com/newwavegeneration" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-instagram"></i> Instagram NewWaveGeneration
     </a>
 
