@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Balises Open Graph pour Facebook -->
-<!-- Forcer la mise à jour de GitHub Pages -->
-<meta property="og:title" content="Martin de Melo – DJ" />
-<meta property="og:description" content="VCard de Martin de Melo, DJ depuis 1983. Retrouvez mes réseaux, mixes et me contacter." />
-<meta property="og:image" content="https://zupimages.net/up/25/23/hku4.jpg" />
-<meta property="og:url" content="https://martindemelo.github.io/VCard" />
-<meta property="og:type" content="website" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Martin de Melo – DJ</title>
+
+  <!-- Balises Open Graph pour Facebook -->
+  <meta property="og:title" content="Martin de Melo – DJ" />
+  <meta property="og:description" content="VCard de Martin de Melo, DJ depuis 1983. Retrouvez mes réseaux, mixes et me contacter." />
+  <meta property="og:image" content="https://zupimages.net/up/25/23/hku4.jpg" />
+  <meta property="og:url" content="https://martindemelo.github.io/VCard" />
+  <meta property="og:type" content="website" />
+
   <style>
     @font-face {
       font-family: 'Hemi Head';
@@ -19,8 +20,13 @@
       font-style: normal;
     }
 
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: 'Arial', sans-serif;
       background: url('fond-floute.jpg') no-repeat center center fixed;
       background-size: cover;
@@ -28,9 +34,9 @@
       color: #fff;
       text-align: center;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding: 2rem 1rem;
+      padding: 1rem;
     }
 
     .container {
@@ -82,17 +88,20 @@
       box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
     }
 
-    i {
-      font-size: 1.2rem;
+    .bonus-button {
+      background: linear-gradient(to right, #ff007f, #ff6f3c);
+      box-shadow: 0 0 15px rgba(255, 111, 60, 0.6);
+    }
+
+    .bonus-button:hover {
+      box-shadow: 0 0 15px rgba(159, 79, 255, 0.6);
     }
 
     .call-button {
       background: linear-gradient(to right, #28a745, #218838);
       color: white;
       max-width: 160px;
-      margin-left: auto;
-      margin-right: auto;
-      width: 100%;
+      margin: 1rem auto 0;
       padding: 0.75rem;
       display: flex;
       align-items: center;
@@ -110,31 +119,12 @@
       box-shadow: 0 0 15px rgba(40, 167, 69, 0.7);
       transform: scale(1.05);
     }
-.bonus-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background: linear-gradient(to right, #ff007f, #ff6f3c);
-  box-shadow: 0 0 15px rgba(255, 111, 60, 0.6);
-  color: white;
-  text-decoration: none;
-  padding: 0.75rem;
-  margin: 0.5rem 0;
-  border-radius: 999px;
-  font-weight: bold;
-  transition: transform 0.2s, box-shadow 0.2s;
-  width: 100%;
-  max-width: 420px;
-  cursor: pointer;
-}
 
-.bonus-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(159, 79, 255, 0.6);
-}
-
+    i {
+      font-size: 1.2rem;
+    }
   </style>
+
   <script src="https://kit.fontawesome.com/3e2c91b3db.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -161,14 +151,14 @@
     <a class="link" href="mailto:martindemelo.dj@gmail.com">
       <i class="fas fa-envelope"></i> Email
     </a>
-    
-    <!-- Bouton Bonus pour comptes supplémentaires -->
+
     <a class="bonus-button" href="bonus.html" title="Comptes supplémentaires">
       <i class="fas fa-ellipsis-h"></i> + de liens
-<!-- Bouton Appeler -->
+    </a>
+
     <a class="call-button" href="tel:+33769197530">
       <i class="fas fa-phone"></i> 📞 Appeler
-  </a>
+    </a>
   </div>
 
   <script>
