@@ -40,12 +40,14 @@
     }
 
     .container {
-      background-color: rgba(0, 0, 0, 0.6);
+      max-width: 600px;
+      width: 90vw;
+      margin: 0 auto;
       padding: 2rem;
       border-radius: 1rem;
-      max-width: 420px;
-      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
       box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+      box-sizing: border-box;
     }
 
     h1 {
@@ -65,25 +67,32 @@
       box-shadow: 0 0 10px rgba(255, 0, 255, 0.4);
     }
 
-    .link, .bonus-button {
+    /* Liens et boutons */
+    .link, .bonus-button, .call-button {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      background: linear-gradient(to right, #7f00ff, #e100ff);
       color: white;
       text-decoration: none;
-      padding: 0.75rem;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
       margin: 0.5rem 0;
       border-radius: 999px;
-      font-weight: bold;
-      transition: transform 0.2s, box-shadow 0.2s;
-      width: 100%;
-      max-width: 420px;
       cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      user-select: none;
     }
 
-    .link:hover, .bonus-button:hover {
+    .link {
+      background: linear-gradient(to right, #7f00ff, #e100ff);
+    }
+
+    .link:hover {
       transform: scale(1.05);
       box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
     }
@@ -95,23 +104,13 @@
 
     .bonus-button:hover {
       box-shadow: 0 0 15px rgba(159, 79, 255, 0.6);
+      transform: scale(1.05);
     }
 
     .call-button {
       background: linear-gradient(to right, #28a745, #218838);
-      color: white;
       max-width: 160px;
       margin: 1rem auto 0;
-      padding: 0.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      border-radius: 999px;
-      font-weight: bold;
-      transition: transform 0.2s, box-shadow 0.2s;
-      text-decoration: none;
-      cursor: pointer;
     }
 
     .call-button:hover {
@@ -122,57 +121,6 @@
 
     i {
       font-size: 1.2rem;
-    }
-
-    /* --- AJOUT RESPONSIVE --- */
-
-    /* container fluide, max 420px */
-    .container {
-      max-width: 420px;
-      width: 100%;
-      box-sizing: border-box;
-      margin: 0 auto;
-    }
-
-    /* photo responsive */
-    .photo {
-      width: 25vw;
-      max-width: 120px;
-      height: 25vw;
-      max-height: 120px;
-    }
-
-    /* taille de texte adaptative */
-    h1 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-    }
-
-    p {
-      font-size: clamp(0.8rem, 2.5vw, 1rem);
-    }
-
-    /* boutons responsive */
-    .link, .bonus-button, .call-button {
-      font-size: clamp(0.8rem, 2vw, 1rem);
-      padding: clamp(0.5rem, 1.5vw, 0.75rem);
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* padding du body sur petits écrans */
-    body {
-      padding: 1rem 0.5rem;
-    }
-
-    /* très petits écrans */
-    @media (max-width: 320px) {
-      .container {
-        padding: 1rem;
-      }
-      .photo {
-        width: 80px;
-        height: 80px;
-      }
     }
   </style>
 
